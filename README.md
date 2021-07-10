@@ -52,7 +52,12 @@ There is also a simplified and unoptimized version of disperseToken that we won'
 
 ### Usage
 
-Please click on images to enlarge.
+_Please click on images to enlarge._
+
+[Website](https://awesome-torvalds-4365b5.netlify.app/)
+
+This is a fairly basic GUI. It isn't production ready yet but I intend to iron out all the deficiencies, add error checks and then 
+launch it on the IOTEX mainnet if the original disperse app is not going to be ported to iotex any time soon.
 
 1. Metamask wallet is required. 
 
