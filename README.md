@@ -16,6 +16,8 @@ Use .secret file to store mnemonic or make suitable changes to truffle-config.js
 
 ```truffle test``` to run tests. (You may have to install ganache-cli)
 
+You should get a screen [similar to this](https://github.com/encoderafat/disperse/blob/main/truffletests.png) if the tests are successful.
+
 ```truffle migrate --reset --network testnet``` to migrate to the iotex testnet.
 
 
