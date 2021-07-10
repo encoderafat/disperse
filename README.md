@@ -10,7 +10,7 @@ Contract Address : ```0x3744c2e13e51A9305D2E9381f5E5D0BBd1a733a4``` on IOTEX Tes
 
 Use .secret file to store mnemonic or make suitable changes to truffle-config.js
 
-```npm install 'truffle-hdwallet-provider' ``` To install dependencies
+```npm install truffle-hdwallet-provider @openzeppelin/contracts@2.5.0 ``` To install dependencies
 
 ```truffle test``` to run tests. (You may have to install ganache-cli)
 
