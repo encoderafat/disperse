@@ -38,7 +38,7 @@ To batch together native currency.
 
 recipients is an array of addresses and the values is the array of amount that is being send to each of the addresses respectively.
 
-To batch together ERC tokens.
+To batch together ERC20/XRC20 tokens.
 
 ```function disperseToken(address tokenAddress, address payable[] calldata recipients, uint256[] calldata values) external```
 
