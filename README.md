@@ -1,5 +1,7 @@
 # Disperse DAPP
 
+Disperse DAPP is a batching protocol for both native currency and ERC20/XRC20 tokens that can help reduce gas cost for multiple transfers by batching them in a single block.
+
 DAPP is live at https://awesome-torvalds-4365b5.netlify.app/
 
 Contract Address : ```0x3744c2e13e51A9305D2E9381f5E5D0BBd1a733a4``` on IOTEX Testnet
@@ -25,3 +27,19 @@ Use .secret file to store mnemonic or make suitable changes to truffle-config.js
 
 
 ### Documentation
+
+This DAPP is based entirely on Artem K's [disperse app on ethereum. (PDF Link)](https://disperse.app/disperse.pdf)
+
+My contract is compatible with solidity 0.5.x and is available [here.](https://github.com/encoderafat/disperse/blob/main/truffle/contracts/disperse.sol)
+
+To batch together native currency.
+
+```function disperseEther(address payable[] calldata recipients, uint256[] calldata values) external payable ```
+
+recipients is an array of addresses and the values is the array of amount that is being send to each of the addresses respectively.
+
+To batch together ERC tokens.
+
+```function disperseToken(address tokenAddress, address payable[] calldata recipients, uint256[] calldata values) external```
+
+tokenAddress is the contract address of the ERC20 contract. The other values are same as above.
