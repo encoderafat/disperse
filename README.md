@@ -20,6 +20,7 @@ Use .secret file to store mnemonic or make suitable changes to truffle-config.js
 ### Frontend (create-react-app)
 
 ``` yarn install ```
+
 ``` yarn start ```
 
 
