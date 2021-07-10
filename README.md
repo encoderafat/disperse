@@ -4,7 +4,7 @@ Disperse DAPP is a batching protocol for both native currency and ERC20/XRC20 to
 
 DAPP is live at https://awesome-torvalds-4365b5.netlify.app/
 
-Contract Address : ```0x3744c2e13e51A9305D2E9381f5E5D0BBd1a733a4``` on IOTEX Testnet
+Contract Address : ```0x3744c2e13e51A9305D2E9381f5E5D0BBd1a733a4``` [on IOTEX Testnet](https://testnet.iotexscan.io/address/0x3744c2e13e51A9305D2E9381f5E5D0BBd1a733a4)
 
 ## Installation and Tests
 
