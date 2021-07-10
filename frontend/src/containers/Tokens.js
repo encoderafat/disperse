@@ -36,6 +36,11 @@ const Tokens = () => {
         setTokenAddress(e.target.value);
     }
 
+    const handleTokenCalls = async () => {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = provider.getSigner();
+    }
+
     const handleApprove = async () => {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner();
@@ -90,7 +95,11 @@ const Tokens = () => {
         const disperseContract = new ethers.Contract(address,disperse.abi,provider);
         const disperseSigned = disperseContract.connect(signer);
 
-        let tx = await disperseSigned.disperseToken(tokenAddress,addressArray,amountArray);
+        if ((addressArray.length === amountArray.length) && addressArray.length > 0) {
+            let tx = await disperseSigned.disperseToken(tokenAddress,addressArray,amountArray);
+        } else {
+            alert("Please enter at least one valid transaction");
+        }
 
         setAddressArray([]);
         setAmountArray([]);
@@ -112,7 +121,11 @@ const Tokens = () => {
                                 </Header>
                             </Form.Field>
                             <Form.Field>
-                                <Input focus placeholder="Enter ERC20 Contract Address" onChange={handleInput}/>
+                                <Input 
+                                focus 
+                                placeholder="Enter ERC20 Contract Address" 
+                                onChange={handleInput}
+                                />
                             </Form.Field>
                             <Divider />
                             <Form.Field>
@@ -128,8 +141,8 @@ const Tokens = () => {
                             </Form.Field>
                             <Divider />
                             <Form.Field>
-                                <Button primary onClick={async () => handleApprove()} disabled={disableApprove}>Approve</Button>
-                                <Button primary onClick={async () => handleDisperse()} disabled={disableDisperse}>Disperse</Button>
+                                <Button basic color='green' onClick={async () => handleApprove()} disabled={disableApprove}>Approve</Button>
+                                <Button basic color='green' onClick={async () => handleDisperse()} disabled={disableDisperse}>Disperse</Button>
                             </Form.Field>   
                         </Form>
                     </Grid.Column>
@@ -151,9 +164,9 @@ const Tokens = () => {
                             : <div></div>}
                         </Grid.Row>
                         <Grid.Row>
-                            <Button primary onClick={onButtonClick}>
+                        {!active ? <Button basic color='green' onClick={onButtonClick}>
                                 Connect To MetaMask
-                            </Button>
+                            </Button> : <div></div> }
                         </Grid.Row>
                     </Grid.Column>
                     <Grid.Column width={3}>

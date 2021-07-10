@@ -50,7 +50,12 @@ const Native = () => {
 
         let overrides = {value: ethers.utils.parseEther(total.toString())};
 
-        let tx = await disperseSigned.disperseEther(addArray,amtArray,overrides);
+        if ((addArray.length === amtArray.length) && addArray.length > 0) {
+            let tx = await disperseSigned.disperseEther(addArray,amtArray,overrides);
+        } else {
+            alert("Please enter at least one valid transaction");
+        }
+
 
     }
 
@@ -87,7 +92,7 @@ const Native = () => {
                             </Form.Field>
                             <Divider />
                             <Form.Field>
-                                <Button primary onClick={handleClick}>Disperse</Button>
+                                <Button basic color='green' onClick={handleClick}>Disperse</Button>
                             </Form.Field>
                         </Form>
                     </Grid.Column>
@@ -109,9 +114,9 @@ const Native = () => {
                             : <div></div>}
                         </Grid.Row>
                         <Grid.Row>
-                            <Button primary onClick={onButtonClick}>
+                            {!active ? <Button basic color='green' onClick={onButtonClick}>
                                 Connect To MetaMask
-                            </Button>
+                            </Button> : <div></div> }
                         </Grid.Row>
                     </Grid.Column>
                     <Grid.Column width={3}>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Button } from 'semantic-ui-react';
+import { Grid, Button, Divider } from 'semantic-ui-react';
 import { ethers } from "ethers";
 import { useWeb3React } from '@web3-react/core';
 import { injectedConnector } from '../web3/connectors';
@@ -27,7 +27,7 @@ const Home = () => {
                 <div>Account: {account}</div>   
               </div>
             ) : (
-              <Button primary onClick={onButtonClick}>
+              <Button basic color='green' onClick={onButtonClick}>
                 Connect To MetaMask
               </Button>
             )}
@@ -51,16 +51,18 @@ const Home = () => {
                         <Grid.Row>
                           <h4>Disperse Native Currency</h4>
                         </Grid.Row>
+                        <Divider />
                         <Grid.Row>
-                          <Button primary as={Link} to='/Native'>Disperse Currency</Button>
+                          <Button basic color='green' as={Link} to='/Native'>Disperse Currency</Button>
                         </Grid.Row>
                       </Grid.Column>
                       <Grid.Column textAlign="center">
-                      <Grid.Row>
+                        <Grid.Row>
                           <h4>Disperse ERC20/XRC20 Tokens</h4>
                         </Grid.Row>
+                        <Divider />
                         <Grid.Row>
-                          <Button primary as={Link} to='/Tokens'>Disperse Tokens</Button>
+                          <Button basic color='green' as={Link} to='/Tokens'>Disperse Tokens</Button>
                         </Grid.Row>
                       </Grid.Column>
                     </Grid.Row>
